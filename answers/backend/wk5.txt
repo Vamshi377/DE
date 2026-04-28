@@ -1,17 +1,20 @@
 DE WEEK-5 FEATURE CONSTRUCTION (PYTHON)
+Dataset: customers.csv
+
 import pandas as pd
-from sklearn.preprocessing import LabelEncoder
+
+df = pd.read_csv("customers.csv")
 
 1. Dummy coding categorical (nominal) variables:
-   dummy = pd.get_dummies(df["fuel_type"], prefix="fuel_type")
+   dummy = pd.get_dummies(df["City"], prefix="City")
 
 2. Encoding categorical (ordinal) variables:
    size_map = {"Small": 1, "Medium": 2, "Large": 3}
-   df["size_encoded"] = df["size"].map(size_map)
+   df["Size_Encoded"] = df["Size"].map(size_map)
 
 3. Transform numeric (continuous) features to categorical features:
-   df["age_group"] = pd.cut(
-       df["age"],
+   df["Age_Group"] = pd.cut(
+       df["Age"],
        bins=[0, 18, 35, 60, 100],
        labels=["Child", "Youth", "Adult", "Senior"]
    )

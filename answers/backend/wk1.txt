@@ -1,8 +1,14 @@
 DE WEEK-1 BASIC DATA HANDLING (PYTHON)
+Dataset: students.csv
+
 import pandas as pd
 
+df = pd.read_csv("students.csv")
+df1 = pd.read_csv("students_part1.csv")
+df2 = pd.read_csv("students_part2.csv")
+
 1. Read data from csv file:
-   df = pd.read_csv("data.csv")
+   df = pd.read_csv("students.csv")
 2. Dimension of the data:
    df.shape
 3. Display top 5 rows and total data:
@@ -12,12 +18,12 @@ import pandas as pd
    df.columns
    df.columns.tolist()
 5. Change columns of a data frame:
-   df.columns = ["A", "B", "C"]
+   df.columns = ["StudentID", "Name", "Age", "Marks"]
 6. Display single or multiple columns:
-   df["A"]
-   df[["A", "B"]]
+   df["Name"]
+   df[["Name", "Marks"]]
 7. Bind rows of data frames:
-   pd.concat([df1, df2], axis=0)
+   pd.concat([df1, df2], axis=0, ignore_index=True)
 8. Bind columns of data frames:
    pd.concat([df1, df2], axis=1)
 9. Find missing values in the dataset:

@@ -1,10 +1,16 @@
 DE WEEK-6 FEATURE EXTRACTION (PYTHON)
+Dataset: Wine dataset from sklearn
+
+import pandas as pd
 from sklearn.decomposition import PCA, TruncatedSVD
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+from sklearn.datasets import load_wine
 from sklearn.feature_selection import SelectKBest, f_classif
 
-X = df.select_dtypes(include=["number"])
-y = df["target"]
+wine = load_wine()
+df = pd.DataFrame(wine.data, columns=wine.feature_names)
+X = df
+y = wine.target
 
 1. Principal Component Analysis (PCA):
    pca = PCA(n_components=2)

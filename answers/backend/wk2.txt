@@ -1,8 +1,10 @@
 DE WEEK-2 STATISTICAL MEASURES (PYTHON)
+Dataset: marks.csv
+
 import pandas as pd
 
-Assume:
-x = df["column_name"]
+df = pd.read_csv("marks.csv")
+x = df["Marks"]
 
 1. Mean:
    x.mean()
