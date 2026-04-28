@@ -13,17 +13,33 @@ X = df
 y = wine.target
 
 1. Principal Component Analysis (PCA):
+   Command:
    pca = PCA(n_components=2)
    X_pca = pca.fit_transform(X)
+   Output:
+   PCA transformed data into 2 principal components
+   Shape: (178, 2)
 
 2. Singular Value Decomposition (SVD):
+   Command:
    svd = TruncatedSVD(n_components=2)
    X_svd = svd.fit_transform(X)
+   Output:
+   SVD transformed data into 2 components
+   Shape: (178, 2)
 
 3. Linear Discriminant Analysis (LDA):
+   Command:
    lda = LinearDiscriminantAnalysis(n_components=1)
    X_lda = lda.fit_transform(X, y)
+   Output:
+   LDA transformed data into 1 discriminant component
+   Shape: (178, 1)
 
 4. Feature Subset Selection:
+   Command:
    selector = SelectKBest(score_func=f_classif, k=5)
    X_selected = selector.fit_transform(X, y)
+   Output:
+   Best 5 features selected from the dataset
+   Shape: (178, 5)

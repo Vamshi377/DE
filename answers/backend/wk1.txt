@@ -8,24 +8,78 @@ df1 = pd.read_csv("students_part1.csv")
 df2 = pd.read_csv("students_part2.csv")
 
 1. Read data from csv file:
+   Command:
    df = pd.read_csv("students.csv")
+   Output:
+   DataFrame is loaded successfully from students.csv
+
 2. Dimension of the data:
+   Command:
    df.shape
+   Output:
+   (10, 4)
+
 3. Display top 5 rows and total data:
+   Command:
    df.head()
+   Output:
+      StudentID   Name   Age  Marks
+   0          1  Rahul    20     85
+   1          2  Sneha    21     90
+   2          3   Amit    19     78
+   3          4   Neha    22     88
+   4          5  Kiran    20     91
+   Command:
    df
+   Output:
+   Displays all rows in the dataset
+
 4. List column names:
-   df.columns
+   Command:
    df.columns.tolist()
+   Output:
+   ['StudentID', 'Name', 'Age', 'Marks']
+
 5. Change columns of a data frame:
+   Command:
    df.columns = ["StudentID", "Name", "Age", "Marks"]
+   Output:
+   Columns renamed successfully
+
 6. Display single or multiple columns:
+   Command:
    df["Name"]
+   Output:
+   0 Rahul
+   1 Sneha
+   2 Amit
+   ...
+   Command:
    df[["Name", "Marks"]]
+   Output:
+       Name  Marks
+   0  Rahul     85
+   1  Sneha     90
+   ...
+
 7. Bind rows of data frames:
+   Command:
    pd.concat([df1, df2], axis=0, ignore_index=True)
+   Output:
+   Combined rows from df1 and df2 into one DataFrame
+
 8. Bind columns of data frames:
+   Command:
    pd.concat([df1, df2], axis=1)
+   Output:
+   Combined columns from df1 and df2 side by side
+
 9. Find missing values in the dataset:
-   df.isnull()
+   Command:
    df.isnull().sum()
+   Output:
+   StudentID    0
+   Name         0
+   Age          1
+   Marks        0
+   dtype: int64

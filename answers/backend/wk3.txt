@@ -9,21 +9,33 @@ iris_data = load_iris()
 df = pd.DataFrame(iris_data.data, columns=iris_data.feature_names)
 
 1. Box plot for each of the four predictors:
+   Command:
    df.plot(kind="box")
    plt.show()
+   Output:
+   Box plot is displayed for sepal length, sepal width, petal length, and petal width
 
 2. Box plot for a specific feature:
+   Command:
    df.boxplot(column=["sepal length (cm)"])
    plt.show()
+   Output:
+   Box plot for sepal length is displayed
 
 3. Histogram for a specific feature:
+   Command:
    df["sepal length (cm)"].hist(color="lightblue")
    plt.xlabel("sepal length (cm)")
    plt.ylabel("frequency")
    plt.show()
+   Output:
+   Histogram for sepal length is displayed
 
 4. Scatter plot of petal length vs sepal length:
+   Command:
    plt.scatter(df["petal length (cm)"], df["sepal length (cm)"], color="blue")
    plt.xlabel("petal length (cm)")
    plt.ylabel("sepal length (cm)")
    plt.show()
+   Output:
+   Scatter plot showing relationship between petal length and sepal length is displayed

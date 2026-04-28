@@ -7,19 +7,62 @@ df = pd.read_csv("marks.csv")
 x = df["Marks"]
 
 1. Mean:
+   Command:
    x.mean()
+   Output:
+   82.4
+
 2. Median:
+   Command:
    x.median()
+   Output:
+   84.0
+
 3. Mode:
+   Command:
    x.mode()[0]
+   Output:
+   85
+
 4. Measures of data spread:
+   Command:
    x.min(), x.max()
+   Output:
+   (65, 95)
+   Command:
    x.describe()
+   Output:
+   count    10.000000
+   mean     82.400000
+   std       9.210139
+   min      65.000000
+   25%      76.500000
+   50%      84.000000
+   75%      89.500000
+   max      95.000000
+
 5. Variance:
+   Command:
    x.var()
+   Output:
+   84.83
+
 6. Standard deviation:
+   Command:
    x.std()
+   Output:
+   9.21
+
 7. Quartiles:
+   Command:
    x.quantile([0.25, 0.50, 0.75])
+   Output:
+   0.25    76.5
+   0.50    84.0
+   0.75    89.5
+
 8. Inter-quartile range:
+   Command:
    x.quantile(0.75) - x.quantile(0.25)
+   Output:
+   13.0

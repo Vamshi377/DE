@@ -6,15 +6,34 @@ import pandas as pd
 df = pd.read_csv("customers.csv")
 
 1. Dummy coding categorical (nominal) variables:
+   Command:
    dummy = pd.get_dummies(df["City"], prefix="City")
+   Output:
+      City_Chennai  City_Delhi  City_Hyderabad
+   0             1           0               0
+   1             0           1               0
+   2             0           0               1
 
 2. Encoding categorical (ordinal) variables:
+   Command:
    size_map = {"Small": 1, "Medium": 2, "Large": 3}
    df["Size_Encoded"] = df["Size"].map(size_map)
+   Output:
+       Size  Size_Encoded
+   0  Small             1
+   1 Medium             2
+   2  Large             3
 
 3. Transform numeric (continuous) features to categorical features:
+   Command:
    df["Age_Group"] = pd.cut(
        df["Age"],
        bins=[0, 18, 35, 60, 100],
        labels=["Child", "Youth", "Adult", "Senior"]
    )
+   Output:
+      Age Age_Group
+   0   16     Child
+   1   28     Youth
+   2   45     Adult
+   3   70    Senior

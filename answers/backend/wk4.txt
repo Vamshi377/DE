@@ -6,6 +6,7 @@ import pandas as pd
 df = pd.read_csv("AutoMPG.csv")
 
 1. Removing missing values / outliers:
+   Command:
    df_clean = df.dropna()
    q1 = df_clean["mpg"].quantile(0.25)
    q3 = df_clean["mpg"].quantile(0.75)
@@ -13,9 +14,17 @@ df = pd.read_csv("AutoMPG.csv")
    lower = q1 - 1.5 * iqr
    upper = q3 + 1.5 * iqr
    df_no_outliers = df_clean[(df_clean["mpg"] >= lower) & (df_clean["mpg"] <= upper)]
+   Output:
+   Missing rows removed and outlier rows filtered successfully
 
 2. Imputing standard values:
+   Command:
    df["horsepower"] = df["horsepower"].fillna(df["horsepower"].mean())
+   Output:
+   Missing values in horsepower replaced with mean value
 
 3. Capping of values:
+   Command:
    df["mpg"] = df["mpg"].clip(lower=lower, upper=upper)
+   Output:
+   mpg values capped between lower and upper limits
