@@ -1,0 +1,27 @@
+DE WEEK-3 BASIC PLOTS USING IRIS DATASET (PYTHON)
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.datasets import load_iris
+
+iris_data = load_iris()
+df = pd.DataFrame(iris_data.data, columns=iris_data.feature_names)
+
+1. Box plot for each of the four predictors:
+   df.plot(kind="box")
+   plt.show()
+
+2. Box plot for a specific feature:
+   df.boxplot(column=["sepal length (cm)"])
+   plt.show()
+
+3. Histogram for a specific feature:
+   df["sepal length (cm)"].hist(color="lightblue")
+   plt.xlabel("sepal length (cm)")
+   plt.ylabel("frequency")
+   plt.show()
+
+4. Scatter plot of petal length vs sepal length:
+   plt.scatter(df["petal length (cm)"], df["sepal length (cm)"], color="blue")
+   plt.xlabel("petal length (cm)")
+   plt.ylabel("sepal length (cm)")
+   plt.show()

@@ -1,0 +1,25 @@
+DE WEEK-1 BASIC DATA HANDLING (PYTHON)
+import pandas as pd
+
+1. Read data from csv file:
+   df = pd.read_csv("data.csv")
+2. Dimension of the data:
+   df.shape
+3. Display top 5 rows and total data:
+   df.head()
+   df
+4. List column names:
+   df.columns
+   df.columns.tolist()
+5. Change columns of a data frame:
+   df.columns = ["A", "B", "C"]
+6. Display single or multiple columns:
+   df["A"]
+   df[["A", "B"]]
+7. Bind rows of data frames:
+   pd.concat([df1, df2], axis=0)
+8. Bind columns of data frames:
+   pd.concat([df1, df2], axis=1)
+9. Find missing values in the dataset:
+   df.isnull()
+   df.isnull().sum()

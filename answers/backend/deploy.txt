@@ -1,0 +1,19 @@
+TO USE THIS ON ANOTHER COMPUTER
+
+1. Copy the whole DEinternal folder to the other computer.
+   or
+   Upload this folder to GitHub and clone it on the other computer.
+
+2. Open Command Prompt inside the DEinternal folder.
+
+3. Run:
+   backend\wk1
+   backend\wk2
+   backend\wk3
+   backend\wk4
+   backend\wk5
+   backend\wk6
+
+4. If you want these commands from any folder, add your DEinternal path to Windows PATH.
+   Example:
+   C:\Users\YourName\Desktop\DEinternal

@@ -1,0 +1,23 @@
+DE WEEK-2 STATISTICAL MEASURES (PYTHON)
+import pandas as pd
+
+Assume:
+x = df["column_name"]
+
+1. Mean:
+   x.mean()
+2. Median:
+   x.median()
+3. Mode:
+   x.mode()[0]
+4. Measures of data spread:
+   x.min(), x.max()
+   x.describe()
+5. Variance:
+   x.var()
+6. Standard deviation:
+   x.std()
+7. Quartiles:
+   x.quantile([0.25, 0.50, 0.75])
+8. Inter-quartile range:
+   x.quantile(0.75) - x.quantile(0.25)

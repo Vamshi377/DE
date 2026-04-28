@@ -1,0 +1,17 @@
+DE WEEK-5 FEATURE CONSTRUCTION (PYTHON)
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+
+1. Dummy coding categorical (nominal) variables:
+   dummy = pd.get_dummies(df["fuel_type"], prefix="fuel_type")
+
+2. Encoding categorical (ordinal) variables:
+   size_map = {"Small": 1, "Medium": 2, "Large": 3}
+   df["size_encoded"] = df["size"].map(size_map)
+
+3. Transform numeric (continuous) features to categorical features:
+   df["age_group"] = pd.cut(
+       df["age"],
+       bins=[0, 18, 35, 60, 100],
+       labels=["Child", "Youth", "Adult", "Senior"]
+   )

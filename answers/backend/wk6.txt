@@ -1,0 +1,23 @@
+DE WEEK-6 FEATURE EXTRACTION (PYTHON)
+from sklearn.decomposition import PCA, TruncatedSVD
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+from sklearn.feature_selection import SelectKBest, f_classif
+
+X = df.select_dtypes(include=["number"])
+y = df["target"]
+
+1. Principal Component Analysis (PCA):
+   pca = PCA(n_components=2)
+   X_pca = pca.fit_transform(X)
+
+2. Singular Value Decomposition (SVD):
+   svd = TruncatedSVD(n_components=2)
+   X_svd = svd.fit_transform(X)
+
+3. Linear Discriminant Analysis (LDA):
+   lda = LinearDiscriminantAnalysis(n_components=1)
+   X_lda = lda.fit_transform(X, y)
+
+4. Feature Subset Selection:
+   selector = SelectKBest(score_func=f_classif, k=5)
+   X_selected = selector.fit_transform(X, y)
